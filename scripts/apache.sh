@@ -21,7 +21,7 @@ sudo cat > /etc/apache2/sites-available/$1.conf << EOF
     <Directory "/var/www/public/">
         Order allow,deny
         Allow from all
-        Require from all
+        Require all granted
         AllowOverride All
     </Directory>
 
