@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo ">>> Installing Composer"
+echo "~ Installing Composer ~"
 
 # Install
 curl -sS https://getcomposer.org/installer | php

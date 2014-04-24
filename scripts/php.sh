@@ -22,9 +22,9 @@ sudo apt-get update
 # Install
 sudo apt-get install -y php5
 sudo apt-get install -y php5-curl
-sudo apt-get install -y php5-gd 
+sudo apt-get install -y php5-gd
 sudo apt-get install -y php5-mcrypt
-sudo apt-get install -y php5-memcached 
+sudo apt-get install -y php5-memcached
 sudo apt-get install -y php5-mysql
 
 # Turn on error reporting

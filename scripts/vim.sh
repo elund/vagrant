@@ -16,5 +16,5 @@ sudo chown -R vagrant:vagrant /home/vagrant/.vim
 ln -s /home/vagrant/.vim/.vimrc /home/vagrant/.vimrc
 
 # Install bundles
-git clone https://github.com/gmarik/vundle.git /home/vagrant/.vim/bundle/vundle
-sudo su - vagrant -c 'vim +BundleInstall +qall'
+# git clone https://github.com/gmarik/vundle.git /home/vagrant/.vim/bundle/vundle
+# sudo su - vagrant -c 'vim +BundleInstall +qall'
