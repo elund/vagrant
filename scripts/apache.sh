@@ -24,7 +24,6 @@ sudo cat > /etc/apache2/sites-available/$1.conf << EOF
         Require all granted
         AllowOverride All
     </Directory>
-
 </VirtualHost>
 EOF
 
@@ -32,6 +31,6 @@ sudo a2ensite $1.conf
 
 sudo a2enmod rewrite
 
-rm -rf /var/www/html/
-
 sudo service apache2 restart
+
+rm -rf /var/www/html/

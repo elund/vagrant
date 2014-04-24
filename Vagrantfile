@@ -62,4 +62,10 @@ Vagrant.configure("2") do |config|
 
     # Grunt
     config.vm.provision "shell", path: SCRIPTS_PATH + "grunt.sh";
+
+    # Bower
+    config.vm.provision "shell", path: SCRIPTS_PATH + "bower.sh";
+
+    # Specific
+    # config.vm.provision "shell", path: "provision.sh"
 end
