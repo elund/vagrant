@@ -18,10 +18,19 @@ sudo cat > /etc/apache2/sites-available/$1.conf << EOF
 
     SetEnv ENVIRONMENT LOCAL
 
+    <Directory "/var/www/public/">
+        Order allow,deny
+        Allow from all
+        Require from all
+        AllowOverride All
+    </Directory>
+
 </VirtualHost>
 EOF
 
 sudo a2ensite $1.conf
+
+sudo a2enmod rewrite
 
 rm -rf /var/www/html/
 
