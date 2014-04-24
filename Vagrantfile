@@ -2,7 +2,8 @@
 # vi: set ft=ruby :
 
 # Scripts
-SCRIPTS_PATH = "~/Code/vagrant/scripts/"
+# SCRIPTS_PATH = "~/Code/vagrant/scripts/"
+SCRIPTS_PATH = "https://raw.githubusercontent.com/aaronlord/vagrant/master/scripts/"
 
 # Server
 SERVER_IP       = "192.168.33.101"

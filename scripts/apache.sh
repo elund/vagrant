@@ -23,4 +23,6 @@ EOF
 
 sudo a2ensite $1.conf
 
+rm -rf /var/www/html/
+
 sudo service apache2 restart
