@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 if [ -z "$1" ]; then
-    php_version="5.3"
+    PHP_VERSION="5.3"
 else
-    php_version="$1"
+    PHP_VERSION="$1"
 fi
 
 echo "~ Installing PHP $1 ~"
 
-if [ $php_version == "5.5" ]; then
+if [ $PHP_VERSION == "5.5" ]; then
     sudo add-apt-repository -y ppa:ondrej/php5
 fi
 
-if [ $php_version == "5.4" ]; then
+if [ $PHP_VERSION == "5.4" ]; then
     sudo add-apt-repository -y ppa:ondrej/php5-oldstable
 fi
 

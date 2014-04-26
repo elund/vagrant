@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # Scripts
-# SCRIPTS_PATH = "~/Code/vagrant/scripts/"
-SCRIPTS_PATH = "https://raw.githubusercontent.com/aaronlord/vagrant/master/scripts/"
+SCRIPTS_PATH = "~/Code/vagrant/scripts/"
+# SCRIPTS_PATH = "https://raw.githubusercontent.com/aaronlord/vagrant/master/scripts/"
 
 # Server
 SERVER_IP       = "192.168.33.101"
@@ -16,6 +16,12 @@ SSH_KEY = "~/.ssh/id_rsa.pub"
 
 # PHP "5.5", "5.4" or "5.3"
 PHP_VERSION = "5.5"
+
+# Ruby
+RVM_VERSION      = "stable"
+RVM_RUBY_VERSION = "1.9.3"
+RVM_RUBY_GEMS    = ["sass"]
+
 
 Vagrant.configure("2") do |config|
 
@@ -39,20 +45,23 @@ Vagrant.configure("2") do |config|
     # SSH
     config.vm.provision "shell", path: SCRIPTS_PATH + "base.sh", args: [SSH_KEY]
 
+    # Dotfiles
+    config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "dotfiles.sh"
+
+    # Vim
+    config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "vim.sh"
+
     # PHP
     config.vm.provision "shell", path: SCRIPTS_PATH + "php.sh", args: [PHP_VERSION]
+
+    # Ruby
+    config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "rvm.sh", args: [RVM_VERSION, RVM_RUBY_VERSION, RVM_RUBY_GEMS.join(' ')]
 
     # Apache
     config.vm.provision "shell", path: SCRIPTS_PATH + "apache.sh", args: [SERVER_HOSTNAME]
 
     # MySQL
     config.vm.provision "shell", path: SCRIPTS_PATH + "mysql.sh"
-
-    # Dotfiles
-    config.vm.provision "shell", path: SCRIPTS_PATH + "dotfiles.sh"
-
-    # Vim
-    # config.vm.provision "shell", path: SCRIPTS_PATH + "vim.sh"
 
     # Composer
     config.vm.provision "shell", path: SCRIPTS_PATH + "composer.sh"
