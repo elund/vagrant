@@ -6,7 +6,9 @@ Vagrant is pretty rad. Here's my `Vagrantfile` and provisioning scripts.
 
 By default, the scripts are pulled down from Github, so you only _really_ need to pull the `Vagrantfile` into your root:
 
-`$ curl -O https://raw.githubusercontent.com/aaronlord/vagrant/master/Vagrantfile`
+```
+$ curl -O https://raw.githubusercontent.com/aaronlord/vagrant/master/Vagrantfile
+```
 
 ### Default
 
