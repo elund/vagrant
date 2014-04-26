@@ -7,7 +7,7 @@ SCRIPTS_PATH = "https://raw.githubusercontent.com/aaronlord/vagrant/master/scrip
 
 # Server
 SERVER_IP       = "192.168.33.101"
-SERVER_HOSTNAME = "vagrant.dev"
+SERVER_HOSTNAME = "vagrant.local"
 SERVER_MEMORY   = "512"
 SERVER_TIMEZONE = "GMT"
 
