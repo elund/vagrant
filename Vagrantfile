@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: SCRIPTS_PATH + "php.sh", args: [PHP_VERSION]
 
     # Ruby
-    config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "rvm.sh", args: [RVM_VERSION, RVM_RUBY_VERSION, RVM_RUBY_GEMS.join(' ')]
+    config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "ruby.sh", args: [RVM_VERSION, RVM_RUBY_VERSION, RVM_RUBY_GEMS.join(' ')]
 
     # Apache
     config.vm.provision "shell", path: SCRIPTS_PATH + "apache.sh", args: [SERVER_HOSTNAME]
