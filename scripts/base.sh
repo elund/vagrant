@@ -16,8 +16,8 @@ sudo apt-get install -y git
 sudo apt-get install -y wget
 
 # Git config
-git config --global user.name "Aaron Lord"
-git config --global user.email "aaronlord1@gmail.com"
+git config --global user.name $1
+git config --global user.email $2
 
 sudo usermod -a -G www-data vagrant
 

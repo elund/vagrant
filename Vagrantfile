@@ -14,6 +14,10 @@ SERVER_TIMEZONE = "GMT"
 # SSH
 SSH_KEY = "~/.ssh/id_rsa.pub"
 
+# Git
+GIT_NAME = "Aaron Lord"
+GIT_EMAIL = "aaronlord1@gmail.com"
+
 # PHP "5.5", "5.4" or "5.3"
 PHP_VERSION = "5.5"
 
@@ -40,10 +44,10 @@ Vagrant.configure("2") do |config|
     end
 
     # Base
-    config.vm.provision "shell", path: SCRIPTS_PATH + "base.sh"
+    config.vm.provision "shell", path: SCRIPTS_PATH + "base.sh", args: [GIT_NAME, GIT_EMAIL]
 
     # SSH
-    config.vm.provision "shell", path: SCRIPTS_PATH + "base.sh", args: [SSH_KEY]
+    config.vm.provision "shell", path: SCRIPTS_PATH + "ssh.sh", args: [SSH_KEY]
 
     # Dotfiles
     config.vm.provision "shell", privileged: false, path: SCRIPTS_PATH + "dotfiles.sh"
