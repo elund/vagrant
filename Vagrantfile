@@ -37,6 +37,8 @@ Vagrant.configure("2") do |config|
 
     config.vm.synced_folder ".", "/var/www"
 
+    config.vm.network :forwarded_port, guest: 35729, host: 35729 # Livereload
+
     config.vm.provider "virtualbox" do |vb|
 
         vb.customize ["modifyvm", :id, "--memory", SERVER_MEMORY]
